@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { auth } from "@/lib/auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+  const signedIn = Boolean(session?.user);
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Nav — barely there */}
@@ -12,10 +16,10 @@ export default function Home() {
           Pixi
         </Link>
         <Link
-          href="/login"
+          href={signedIn ? "/dashboard" : "/login"}
           className="text-xs text-muted transition hover:text-foreground"
         >
-          Sign in
+          {signedIn ? "Dashboard" : "Sign in"}
         </Link>
       </nav>
 
@@ -53,10 +57,10 @@ export default function Home() {
 
         {/* CTA */}
         <Link
-          href="/signup"
+          href={signedIn ? "/dashboard/upload" : "/signup"}
           className="mt-8 rounded-full bg-foreground px-7 py-2.5 text-sm font-medium text-background transition hover:opacity-85"
         >
-          Try it free
+          {signedIn ? "Upload an image" : "Try it free"}
         </Link>
       </main>
 
