@@ -1,18 +1,32 @@
 import { test, expect } from "@playwright/test";
 
-const stubs = [
-  { path: "/login", heading: /sign in/i },
-  { path: "/signup", heading: /create account/i },
-  { path: "/privacy", heading: /privacy policy/i },
-  { path: "/terms", heading: /terms of service/i },
-];
+test("/login renders sign in form", async ({ page }) => {
+  await page.goto("/login");
+  await expect(page.getByRole("heading", { name: /sign in/i })).toBeVisible();
+  await expect(page.getByLabel(/email/i)).toBeVisible();
+  await expect(page.getByLabel(/password/i)).toBeVisible();
+});
 
-for (const { path, heading } of stubs) {
-  test(`${path} renders heading and back link`, async ({ page }) => {
-    await page.goto(path);
-    await expect(page.getByRole("heading", { name: heading })).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: /back to home/i }),
-    ).toBeVisible();
-  });
-}
+test("/signup renders create account form", async ({ page }) => {
+  await page.goto("/signup");
+  await expect(
+    page.getByRole("heading", { name: /create account/i }),
+  ).toBeVisible();
+  await expect(page.getByLabel(/email/i)).toBeVisible();
+});
+
+test("/privacy renders heading and back link", async ({ page }) => {
+  await page.goto("/privacy");
+  await expect(
+    page.getByRole("heading", { name: /privacy policy/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /back to home/i })).toBeVisible();
+});
+
+test("/terms renders heading and back link", async ({ page }) => {
+  await page.goto("/terms");
+  await expect(
+    page.getByRole("heading", { name: /terms of service/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /back to home/i })).toBeVisible();
+});
