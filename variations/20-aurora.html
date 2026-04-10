@@ -1,37 +1,189 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Aurora</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;font-family:system-ui,sans-serif;background:#0a0a2e;color:#fff;overflow:hidden}
-.aurora{position:fixed;inset:0;z-index:0}
-.aurora div{position:absolute;width:150%;height:60%;left:-25%;filter:blur(80px);opacity:.25;animation:aurora 12s ease-in-out infinite}
-.aurora div:nth-child(1){background:radial-gradient(ellipse,#22c55e,transparent 70%);top:-20%;animation-duration:12s}
-.aurora div:nth-child(2){background:radial-gradient(ellipse,#06b6d4,transparent 70%);top:-10%;left:-10%;animation-delay:-4s;animation-duration:14s}
-.aurora div:nth-child(3){background:radial-gradient(ellipse,#a855f7,transparent 70%);top:0%;left:10%;animation-delay:-8s;animation-duration:16s}
-@keyframes aurora{0%,100%{transform:translateX(-10%) translateY(0) rotate(-5deg) scale(1)}33%{transform:translateX(5%) translateY(-20px) rotate(3deg) scale(1.1)}66%{transform:translateX(-5%) translateY(10px) rotate(-3deg) scale(.95)}}
-.content{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:100px 24px;text-align:center;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
-nav{position:fixed;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;padding:24px 32px}
-nav span{font-size:12px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5)}
-nav a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none}
-h1{font-size:36px;font-weight:600;line-height:1.4;letter-spacing:-.5px}
-p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.8;margin-top:20px}
-.btn{display:inline-block;margin-top:32px;border:1px solid rgba(255,255,255,.25);color:#fff;padding:14px 40px;border-radius:99px;text-decoration:none;font-size:13px;font-weight:500;backdrop-filter:blur(8px);background:rgba(255,255,255,.05);transition:.3s}
-.btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
-.steps{margin-top:64px;text-align:left;width:100%}
-.step{padding:16px 0;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:16px;align-items:baseline}
-.step .n{font-size:12px;color:rgba(255,255,255,.2);font-weight:600}
-.step p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.6}
-.step strong{color:rgba(255,255,255,.7)}
-</style></head><body>
-<div class="aurora"><div></div><div></div><div></div></div>
-<nav><span>Pixi</span><a href="#">Sign in</a></nav>
-<div class="content">
-  <h1>Know where your images end up.</h1>
-  <p>Invisible tracking and C2PA content credentials embedded into every image you share. See every open, every share, every forward.</p>
-  <a href="#" class="btn">Try it free</a>
-  <div class="steps">
-    <div class="step"><span class="n">01</span><p><strong>Upload</strong> — we embed invisible tracking and sign it</p></div>
-    <div class="step"><span class="n">02</span><p><strong>Share</strong> — send anywhere, looks identical</p></div>
-    <div class="step"><span class="n">03</span><p><strong>Track</strong> — every open, every forward, verified</p></div>
-  </div>
-</div>
-</body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pixi — Aurora</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        font-family: system-ui, sans-serif;
+        background: #0a0a2e;
+        color: #fff;
+        overflow: hidden;
+      }
+      .aurora {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+      }
+      .aurora div {
+        position: absolute;
+        width: 150%;
+        height: 60%;
+        left: -25%;
+        filter: blur(80px);
+        opacity: 0.25;
+        animation: aurora 12s ease-in-out infinite;
+      }
+      .aurora div:nth-child(1) {
+        background: radial-gradient(ellipse, #22c55e, transparent 70%);
+        top: -20%;
+        animation-duration: 12s;
+      }
+      .aurora div:nth-child(2) {
+        background: radial-gradient(ellipse, #06b6d4, transparent 70%);
+        top: -10%;
+        left: -10%;
+        animation-delay: -4s;
+        animation-duration: 14s;
+      }
+      .aurora div:nth-child(3) {
+        background: radial-gradient(ellipse, #a855f7, transparent 70%);
+        top: 0%;
+        left: 10%;
+        animation-delay: -8s;
+        animation-duration: 16s;
+      }
+      @keyframes aurora {
+        0%,
+        100% {
+          transform: translateX(-10%) translateY(0) rotate(-5deg) scale(1);
+        }
+        33% {
+          transform: translateX(5%) translateY(-20px) rotate(3deg) scale(1.1);
+        }
+        66% {
+          transform: translateX(-5%) translateY(10px) rotate(-3deg) scale(0.95);
+        }
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 100px 24px;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 32px;
+      }
+      nav span {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      nav a {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+      }
+      h1 {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.5px;
+      }
+      p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.45);
+        line-height: 1.8;
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        padding: 14px 40px;
+        border-radius: 99px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.05);
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+      .steps {
+        margin-top: 64px;
+        text-align: left;
+        width: 100%;
+      }
+      .step {
+        padding: 16px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        gap: 16px;
+        align-items: baseline;
+      }
+      .step .n {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+      }
+      .step p {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.4);
+        line-height: 1.6;
+      }
+      .step strong {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="aurora">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav><span>Pixi</span><a href="#">Sign in</a></nav>
+    <div class="content">
+      <h1>Know where your images end up.</h1>
+      <p>
+        Invisible tracking and C2PA content credentials embedded into every
+        image you share. See every open, every share, every forward.
+      </p>
+      <a href="#" class="btn">Try it free</a>
+      <div class="steps">
+        <div class="step">
+          <span class="n">01</span>
+          <p>
+            <strong>Upload</strong> — we embed invisible tracking and sign it
+          </p>
+        </div>
+        <div class="step">
+          <span class="n">02</span>
+          <p><strong>Share</strong> — send anywhere, looks identical</p>
+        </div>
+        <div class="step">
+          <span class="n">03</span>
+          <p><strong>Track</strong> — every open, every forward, verified</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

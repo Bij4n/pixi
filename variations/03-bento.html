@@ -1,36 +1,197 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Bento</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;font-family:system-ui,sans-serif;background:#0a0a0a;color:#fff;padding:16px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 8px;margin-bottom:16px}
-nav span{font-weight:600;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#888}
-nav a{color:#555;text-decoration:none;font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:12px;max-width:900px;margin:0 auto}
-.cell{background:#161616;border:1px solid #222;border-radius:16px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;position:relative}
-.cell.hero{grid-column:span 2;grid-row:span 2;justify-content:center}
-.cell.hero h1{font-size:36px;font-weight:600;line-height:1.3;letter-spacing:-.5px}
-.cell.hero p{color:#666;font-size:14px;margin-top:12px;line-height:1.6}
-.cell.hero .btn{display:inline-block;margin-top:20px;background:#fff;color:#000;padding:10px 28px;border-radius:99px;text-decoration:none;font-size:13px;font-weight:600;width:fit-content}
-.cell.stat .num{font-size:48px;font-weight:700;letter-spacing:-2px;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.cell.stat p{color:#555;font-size:12px;margin-top:4px;text-transform:uppercase;letter-spacing:1px}
-.cell.step{justify-content:space-between}
-.cell.step .n{font-size:11px;color:#333;font-weight:600;text-transform:uppercase;letter-spacing:2px}
-.cell.step h3{font-size:15px;font-weight:500}
-.cell.step p{color:#555;font-size:13px;line-height:1.5;margin-top:6px}
-.cell.accent{background:linear-gradient(135deg,#1e1b4b,#312e81);border-color:#3730a3}
-.cell.accent p{color:#a5b4fc;font-size:13px;line-height:1.6}
-.cell.accent .tag{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#818cf8;margin-bottom:8px}
-.cell.wide{grid-column:span 2}
-</style></head><body>
-<nav><span>Pixi</span><a href="#">Sign in</a></nav>
-<div class="grid">
-  <div class="cell hero"><h1>Know where your images end up.</h1><p>Invisible tracking + C2PA content credentials for every image you share.</p><a href="#" class="btn">Try it free</a></div>
-  <div class="cell stat"><div class="num">12</div><p>People viewed</p></div>
-  <div class="cell stat"><div class="num">3</div><p>Forwards</p></div>
-  <div class="cell step"><div class="n">Step 01</div><div><h3>Upload</h3><p>Drop any image. We embed tracking + sign it.</p></div></div>
-  <div class="cell step"><div class="n">Step 02</div><div><h3>Share</h3><p>Send it anywhere. It looks unchanged.</p></div></div>
-  <div class="cell accent wide"><div class="tag">C2PA</div><p>Every image is cryptographically signed using the same standard trusted by Adobe, the BBC, and the New York Times. Anyone can verify provenance.</p></div>
-  <div class="cell step"><div class="n">Step 03</div><div><h3>Track</h3><p>See every open, every share, in real time.</p></div></div>
-  <div class="cell stat"><div class="num">✓</div><p>Verified</p></div>
-</div>
-</body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pixi — Bento</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        font-family: system-ui, sans-serif;
+        background: #0a0a0a;
+        color: #fff;
+        padding: 16px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 8px;
+        margin-bottom: 16px;
+      }
+      nav span {
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #888;
+      }
+      nav a {
+        color: #555;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 180px;
+        gap: 12px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .cell {
+        background: #161616;
+        border: 1px solid #222;
+        border-radius: 16px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+        position: relative;
+      }
+      .cell.hero {
+        grid-column: span 2;
+        grid-row: span 2;
+        justify-content: center;
+      }
+      .cell.hero h1 {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+      }
+      .cell.hero p {
+        color: #666;
+        font-size: 14px;
+        margin-top: 12px;
+        line-height: 1.6;
+      }
+      .cell.hero .btn {
+        display: inline-block;
+        margin-top: 20px;
+        background: #fff;
+        color: #000;
+        padding: 10px 28px;
+        border-radius: 99px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        width: fit-content;
+      }
+      .cell.stat .num {
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: -2px;
+        background: linear-gradient(135deg, #60a5fa, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .cell.stat p {
+        color: #555;
+        font-size: 12px;
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .cell.step {
+        justify-content: space-between;
+      }
+      .cell.step .n {
+        font-size: 11px;
+        color: #333;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .cell.step h3 {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .cell.step p {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-top: 6px;
+      }
+      .cell.accent {
+        background: linear-gradient(135deg, #1e1b4b, #312e81);
+        border-color: #3730a3;
+      }
+      .cell.accent p {
+        color: #a5b4fc;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .cell.accent .tag {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #818cf8;
+        margin-bottom: 8px;
+      }
+      .cell.wide {
+        grid-column: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <nav><span>Pixi</span><a href="#">Sign in</a></nav>
+    <div class="grid">
+      <div class="cell hero">
+        <h1>Know where your images end up.</h1>
+        <p>
+          Invisible tracking + C2PA content credentials for every image you
+          share.
+        </p>
+        <a href="#" class="btn">Try it free</a>
+      </div>
+      <div class="cell stat">
+        <div class="num">12</div>
+        <p>People viewed</p>
+      </div>
+      <div class="cell stat">
+        <div class="num">3</div>
+        <p>Forwards</p>
+      </div>
+      <div class="cell step">
+        <div class="n">Step 01</div>
+        <div>
+          <h3>Upload</h3>
+          <p>Drop any image. We embed tracking + sign it.</p>
+        </div>
+      </div>
+      <div class="cell step">
+        <div class="n">Step 02</div>
+        <div>
+          <h3>Share</h3>
+          <p>Send it anywhere. It looks unchanged.</p>
+        </div>
+      </div>
+      <div class="cell accent wide">
+        <div class="tag">C2PA</div>
+        <p>
+          Every image is cryptographically signed using the same standard
+          trusted by Adobe, the BBC, and the New York Times. Anyone can verify
+          provenance.
+        </p>
+      </div>
+      <div class="cell step">
+        <div class="n">Step 03</div>
+        <div>
+          <h3>Track</h3>
+          <p>See every open, every share, in real time.</p>
+        </div>
+      </div>
+      <div class="cell stat">
+        <div class="num">✓</div>
+        <p>Verified</p>
+      </div>
+    </div>
+  </body>
+</html>

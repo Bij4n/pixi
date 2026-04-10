@@ -1,38 +1,202 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — 20 Variations</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,sans-serif;background:#111;color:#fff;padding:48px 32px}
-h1{font-size:24px;font-weight:600;margin-bottom:8px}
-p{color:#666;font-size:14px;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;max-width:1200px}
-a{display:block;padding:20px;background:#1a1a1a;border:1px solid #222;border-radius:8px;text-decoration:none;color:#fff;transition:.2s}
-a:hover{border-color:#444;background:#222}
-.num{font-size:11px;color:#555;font-family:monospace;margin-bottom:6px}
-.name{font-size:15px;font-weight:600;margin-bottom:4px}
-.desc{font-size:12px;color:#666;line-height:1.5}
-</style></head><body>
-<h1>Pixi Landing Page — 20 Variations</h1>
-<p>Click any to open in a new tab. Each is a completely different visual style.</p>
-<div class="grid">
-  <a href="01-glassmorphism.html" target="_blank"><div class="num">01</div><div class="name">Glassmorphism</div><div class="desc">Frosted glass cards over animated gradient blobs</div></a>
-  <a href="02-neobrutalism.html" target="_blank"><div class="num">02</div><div class="name">Neobrutalism</div><div class="desc">Thick borders, bright flat colors, offset shadows</div></a>
-  <a href="03-bento.html" target="_blank"><div class="num">03</div><div class="name">Bento Grid</div><div class="desc">Mixed-size cards in a dark mosaic layout</div></a>
-  <a href="04-terminal.html" target="_blank"><div class="num">04</div><div class="name">Terminal</div><div class="desc">Green-on-black, monospace, blinking cursor, scanlines</div></a>
-  <a href="05-editorial.html" target="_blank"><div class="num">05</div><div class="name">Magazine Editorial</div><div class="desc">Serif typography, asymmetric, cream background</div></a>
-  <a href="06-dark-luxury.html" target="_blank"><div class="num">06</div><div class="name">Dark Luxury</div><div class="desc">Pure black, gold accents, thin serifs, extreme whitespace</div></a>
-  <a href="07-synthwave.html" target="_blank"><div class="num">07</div><div class="name">Synthwave</div><div class="desc">Neon pink/cyan, perspective grid, retro glow</div></a>
-  <a href="08-swiss.html" target="_blank"><div class="num">08</div><div class="name">Swiss / International</div><div class="desc">Strict grid, Helvetica, one red accent, no decoration</div></a>
-  <a href="09-neumorphism.html" target="_blank"><div class="num">09</div><div class="name">Neumorphism</div><div class="desc">Soft shadows, raised/inset elements, tactile</div></a>
-  <a href="10-split.html" target="_blank"><div class="num">10</div><div class="name">Split Screen</div><div class="desc">Dark left / light right, poster-like tension</div></a>
-  <a href="11-newspaper.html" target="_blank"><div class="num">11</div><div class="name">Newspaper</div><div class="desc">Multi-column, serif, masthead, dateline, sepia</div></a>
-  <a href="12-zen.html" target="_blank"><div class="num">12</div><div class="name">Zen / Japanese Minimal</div><div class="desc">Extreme whitespace, thin type, vertical text accent</div></a>
-  <a href="13-clay.html" target="_blank"><div class="num">13</div><div class="name">Claymorphism</div><div class="desc">Puffy pastel shapes, soft shadows, playful</div></a>
-  <a href="14-cyberpunk.html" target="_blank"><div class="num">14</div><div class="name">Cyberpunk</div><div class="desc">Neon cyan/magenta, glitch text, angular, dark</div></a>
-  <a href="15-maxtype.html" target="_blank"><div class="num">15</div><div class="name">Maximalist Typography</div><div class="desc">Huge bold text IS the design, no images or icons</div></a>
-  <a href="16-organic.html" target="_blank"><div class="num">16</div><div class="name">Organic / Nature</div><div class="desc">Earth tones, animated blob shapes, warm and soft</div></a>
-  <a href="17-polaroid.html" target="_blank"><div class="num">17</div><div class="name">Polaroid / Scrapbook</div><div class="desc">Tilted photo cards, handwritten font, cork board feel</div></a>
-  <a href="18-gradient-mesh.html" target="_blank"><div class="num">18</div><div class="name">Gradient Mesh</div><div class="desc">Vibrant layered radial gradients, iOS-wallpaper feel</div></a>
-  <a href="19-grunge.html" target="_blank"><div class="num">19</div><div class="name">Grunge / Indie</div><div class="desc">Dashed borders, mixed fonts, tilted elements, raw</div></a>
-  <a href="20-aurora.html" target="_blank"><div class="num">20</div><div class="name">Aurora / Northern Lights</div><div class="desc">Animated aurora blobs on dark navy, ethereal</div></a>
-</div>
-</body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pixi — 20 Variations</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        background: #111;
+        color: #fff;
+        padding: 48px 32px;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      p {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 12px;
+        max-width: 1200px;
+      }
+      a {
+        display: block;
+        padding: 20px;
+        background: #1a1a1a;
+        border: 1px solid #222;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #fff;
+        transition: 0.2s;
+      }
+      a:hover {
+        border-color: #444;
+        background: #222;
+      }
+      .num {
+        font-size: 11px;
+        color: #555;
+        font-family: monospace;
+        margin-bottom: 6px;
+      }
+      .name {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .desc {
+        font-size: 12px;
+        color: #666;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pixi Landing Page — 20 Variations</h1>
+    <p>
+      Click any to open in a new tab. Each is a completely different visual
+      style.
+    </p>
+    <div class="grid">
+      <a href="01-glassmorphism.html" target="_blank"
+        ><div class="num">01</div>
+        <div class="name">Glassmorphism</div>
+        <div class="desc">
+          Frosted glass cards over animated gradient blobs
+        </div></a
+      >
+      <a href="02-neobrutalism.html" target="_blank"
+        ><div class="num">02</div>
+        <div class="name">Neobrutalism</div>
+        <div class="desc">
+          Thick borders, bright flat colors, offset shadows
+        </div></a
+      >
+      <a href="03-bento.html" target="_blank"
+        ><div class="num">03</div>
+        <div class="name">Bento Grid</div>
+        <div class="desc">Mixed-size cards in a dark mosaic layout</div></a
+      >
+      <a href="04-terminal.html" target="_blank"
+        ><div class="num">04</div>
+        <div class="name">Terminal</div>
+        <div class="desc">
+          Green-on-black, monospace, blinking cursor, scanlines
+        </div></a
+      >
+      <a href="05-editorial.html" target="_blank"
+        ><div class="num">05</div>
+        <div class="name">Magazine Editorial</div>
+        <div class="desc">
+          Serif typography, asymmetric, cream background
+        </div></a
+      >
+      <a href="06-dark-luxury.html" target="_blank"
+        ><div class="num">06</div>
+        <div class="name">Dark Luxury</div>
+        <div class="desc">
+          Pure black, gold accents, thin serifs, extreme whitespace
+        </div></a
+      >
+      <a href="07-synthwave.html" target="_blank"
+        ><div class="num">07</div>
+        <div class="name">Synthwave</div>
+        <div class="desc">Neon pink/cyan, perspective grid, retro glow</div></a
+      >
+      <a href="08-swiss.html" target="_blank"
+        ><div class="num">08</div>
+        <div class="name">Swiss / International</div>
+        <div class="desc">
+          Strict grid, Helvetica, one red accent, no decoration
+        </div></a
+      >
+      <a href="09-neumorphism.html" target="_blank"
+        ><div class="num">09</div>
+        <div class="name">Neumorphism</div>
+        <div class="desc">Soft shadows, raised/inset elements, tactile</div></a
+      >
+      <a href="10-split.html" target="_blank"
+        ><div class="num">10</div>
+        <div class="name">Split Screen</div>
+        <div class="desc">Dark left / light right, poster-like tension</div></a
+      >
+      <a href="11-newspaper.html" target="_blank"
+        ><div class="num">11</div>
+        <div class="name">Newspaper</div>
+        <div class="desc">
+          Multi-column, serif, masthead, dateline, sepia
+        </div></a
+      >
+      <a href="12-zen.html" target="_blank"
+        ><div class="num">12</div>
+        <div class="name">Zen / Japanese Minimal</div>
+        <div class="desc">
+          Extreme whitespace, thin type, vertical text accent
+        </div></a
+      >
+      <a href="13-clay.html" target="_blank"
+        ><div class="num">13</div>
+        <div class="name">Claymorphism</div>
+        <div class="desc">Puffy pastel shapes, soft shadows, playful</div></a
+      >
+      <a href="14-cyberpunk.html" target="_blank"
+        ><div class="num">14</div>
+        <div class="name">Cyberpunk</div>
+        <div class="desc">Neon cyan/magenta, glitch text, angular, dark</div></a
+      >
+      <a href="15-maxtype.html" target="_blank"
+        ><div class="num">15</div>
+        <div class="name">Maximalist Typography</div>
+        <div class="desc">
+          Huge bold text IS the design, no images or icons
+        </div></a
+      >
+      <a href="16-organic.html" target="_blank"
+        ><div class="num">16</div>
+        <div class="name">Organic / Nature</div>
+        <div class="desc">
+          Earth tones, animated blob shapes, warm and soft
+        </div></a
+      >
+      <a href="17-polaroid.html" target="_blank"
+        ><div class="num">17</div>
+        <div class="name">Polaroid / Scrapbook</div>
+        <div class="desc">
+          Tilted photo cards, handwritten font, cork board feel
+        </div></a
+      >
+      <a href="18-gradient-mesh.html" target="_blank"
+        ><div class="num">18</div>
+        <div class="name">Gradient Mesh</div>
+        <div class="desc">
+          Vibrant layered radial gradients, iOS-wallpaper feel
+        </div></a
+      >
+      <a href="19-grunge.html" target="_blank"
+        ><div class="num">19</div>
+        <div class="name">Grunge / Indie</div>
+        <div class="desc">
+          Dashed borders, mixed fonts, tilted elements, raw
+        </div></a
+      >
+      <a href="20-aurora.html" target="_blank"
+        ><div class="num">20</div>
+        <div class="name">Aurora / Northern Lights</div>
+        <div class="desc">Animated aurora blobs on dark navy, ethereal</div></a
+      >
+    </div>
+  </body>
+</html>

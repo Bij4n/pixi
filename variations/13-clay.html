@@ -1,31 +1,156 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Claymorphism</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;font-family:'Nunito',sans-serif;background:#f0e6ff;color:#4a3a6b;display:flex;flex-direction:column;align-items:center;padding:32px}
-nav{width:100%;max-width:700px;display:flex;justify-content:space-between;align-items:center;margin-bottom:48px}
-nav span{font-weight:800;font-size:18px;color:#7c5cbf}
-nav a{font-size:13px;color:#a88fd4;text-decoration:none;background:rgba(255,255,255,.5);padding:8px 20px;border-radius:16px;box-shadow:4px 4px 12px rgba(124,92,191,.15),inset 0 -2px 4px rgba(124,92,191,.1)}
-.hero{background:rgba(255,255,255,.45);border-radius:32px;padding:56px 40px;max-width:500px;text-align:center;box-shadow:8px 8px 24px rgba(124,92,191,.15),inset 0 -3px 6px rgba(124,92,191,.08);border:1px solid rgba(255,255,255,.6);margin-bottom:32px}
-h1{font-size:30px;font-weight:800;line-height:1.4;color:#5a3d8a}
-p{font-size:15px;color:#8b7aaa;line-height:1.7;margin-top:16px}
-.btn{display:inline-block;margin-top:24px;background:linear-gradient(135deg,#a78bfa,#7c5cbf);color:#fff;padding:14px 36px;border-radius:20px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:4px 6px 16px rgba(124,92,191,.3);transition:.2s}
-.btn:hover{transform:translateY(-2px);box-shadow:4px 8px 20px rgba(124,92,191,.4)}
-.steps{display:flex;gap:16px;max-width:700px;width:100%;margin-top:8px}
-.step{flex:1;background:rgba(255,255,255,.4);border-radius:24px;padding:28px 20px;text-align:center;box-shadow:6px 6px 16px rgba(124,92,191,.12),inset 0 -2px 4px rgba(124,92,191,.06);border:1px solid rgba(255,255,255,.5)}
-.step .icon{font-size:32px;margin-bottom:12px}
-.step h3{font-size:14px;font-weight:800;color:#5a3d8a;margin-bottom:6px}
-.step p{font-size:12px;color:#9b8abf;line-height:1.5;margin:0}
-</style></head><body>
-<nav><span>pixi</span><a href="#">Sign in</a></nav>
-<div class="hero">
-  <h1>Know where your images end up</h1>
-  <p>Invisible tracking and C2PA content credentials for every image you share.</p>
-  <a href="#" class="btn">Try it free</a>
-</div>
-<div class="steps">
-  <div class="step"><div class="icon">📤</div><h3>Upload</h3><p>Drop any image. We sign and track it.</p></div>
-  <div class="step"><div class="icon">🔗</div><h3>Share</h3><p>Send anywhere. Looks unchanged.</p></div>
-  <div class="step"><div class="icon">👁️</div><h3>Track</h3><p>See every open in real time.</p></div>
-</div>
-</body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pixi — Claymorphism</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        font-family: "Nunito", sans-serif;
+        background: #f0e6ff;
+        color: #4a3a6b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px;
+      }
+      nav {
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 48px;
+      }
+      nav span {
+        font-weight: 800;
+        font-size: 18px;
+        color: #7c5cbf;
+      }
+      nav a {
+        font-size: 13px;
+        color: #a88fd4;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 8px 20px;
+        border-radius: 16px;
+        box-shadow:
+          4px 4px 12px rgba(124, 92, 191, 0.15),
+          inset 0 -2px 4px rgba(124, 92, 191, 0.1);
+      }
+      .hero {
+        background: rgba(255, 255, 255, 0.45);
+        border-radius: 32px;
+        padding: 56px 40px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow:
+          8px 8px 24px rgba(124, 92, 191, 0.15),
+          inset 0 -3px 6px rgba(124, 92, 191, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1.4;
+        color: #5a3d8a;
+      }
+      p {
+        font-size: 15px;
+        color: #8b7aaa;
+        line-height: 1.7;
+        margin-top: 16px;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 24px;
+        background: linear-gradient(135deg, #a78bfa, #7c5cbf);
+        color: #fff;
+        padding: 14px 36px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 4px 6px 16px rgba(124, 92, 191, 0.3);
+        transition: 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 4px 8px 20px rgba(124, 92, 191, 0.4);
+      }
+      .steps {
+        display: flex;
+        gap: 16px;
+        max-width: 700px;
+        width: 100%;
+        margin-top: 8px;
+      }
+      .step {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 24px;
+        padding: 28px 20px;
+        text-align: center;
+        box-shadow:
+          6px 6px 16px rgba(124, 92, 191, 0.12),
+          inset 0 -2px 4px rgba(124, 92, 191, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .step .icon {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+      .step h3 {
+        font-size: 14px;
+        font-weight: 800;
+        color: #5a3d8a;
+        margin-bottom: 6px;
+      }
+      .step p {
+        font-size: 12px;
+        color: #9b8abf;
+        line-height: 1.5;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav><span>pixi</span><a href="#">Sign in</a></nav>
+    <div class="hero">
+      <h1>Know where your images end up</h1>
+      <p>
+        Invisible tracking and C2PA content credentials for every image you
+        share.
+      </p>
+      <a href="#" class="btn">Try it free</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="icon">📤</div>
+        <h3>Upload</h3>
+        <p>Drop any image. We sign and track it.</p>
+      </div>
+      <div class="step">
+        <div class="icon">🔗</div>
+        <h3>Share</h3>
+        <p>Send anywhere. Looks unchanged.</p>
+      </div>
+      <div class="step">
+        <div class="icon">👁️</div>
+        <h3>Track</h3>
+        <p>See every open in real time.</p>
+      </div>
+    </div>
+  </body>
+</html>

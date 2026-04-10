@@ -1,30 +1,160 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Neumorphism</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;font-family:system-ui,sans-serif;background:#e0e0e0;color:#444;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px}
-.card{background:#e0e0e0;border-radius:24px;padding:48px 40px;max-width:420px;width:100%;box-shadow:8px 8px 16px #b8b8b8,-8px -8px 16px #ffffff;text-align:center;margin-bottom:24px}
-nav{display:flex;justify-content:space-between;width:100%;max-width:420px;margin-bottom:32px;align-items:center}
-nav span{font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#888}
-nav a{font-size:12px;color:#999;text-decoration:none;background:#e0e0e0;padding:8px 20px;border-radius:12px;box-shadow:4px 4px 8px #b8b8b8,-4px -4px 8px #fff}
-h1{font-size:28px;font-weight:600;line-height:1.4;color:#333;margin-bottom:16px}
-p{font-size:14px;color:#888;line-height:1.7;margin-bottom:24px}
-.btn{display:inline-block;padding:14px 36px;border-radius:16px;text-decoration:none;font-size:13px;font-weight:600;color:#7c5cbf;background:#e0e0e0;box-shadow:6px 6px 12px #b8b8b8,-6px -6px 12px #fff;transition:.2s}
-.btn:hover{box-shadow:inset 4px 4px 8px #b8b8b8,inset -4px -4px 8px #fff}
-.steps{display:flex;gap:16px;max-width:420px;width:100%}
-.step{flex:1;background:#e0e0e0;border-radius:16px;padding:24px 16px;text-align:center;box-shadow:6px 6px 12px #b8b8b8,-6px -6px 12px #fff}
-.step .n{font-size:24px;font-weight:700;color:#7c5cbf;margin-bottom:8px}
-.step h3{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;color:#555}
-.step p{font-size:11px;color:#999;line-height:1.5;margin:0}
-</style></head><body>
-<nav><span>Pixi</span><a href="#">Sign in</a></nav>
-<div class="card">
-  <h1>Know where your images end up.</h1>
-  <p>Invisible tracking and C2PA content credentials embedded into every image you share.</p>
-  <a href="#" class="btn">Try it free</a>
-</div>
-<div class="steps">
-  <div class="step"><div class="n">1</div><h3>Upload</h3><p>Add tracking + signature</p></div>
-  <div class="step"><div class="n">2</div><h3>Share</h3><p>Send it anywhere</p></div>
-  <div class="step"><div class="n">3</div><h3>Track</h3><p>See every open</p></div>
-</div>
-</body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pixi — Neumorphism</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        font-family: system-ui, sans-serif;
+        background: #e0e0e0;
+        color: #444;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+      }
+      .card {
+        background: #e0e0e0;
+        border-radius: 24px;
+        padding: 48px 40px;
+        max-width: 420px;
+        width: 100%;
+        box-shadow:
+          8px 8px 16px #b8b8b8,
+          -8px -8px 16px #ffffff;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 420px;
+        margin-bottom: 32px;
+        align-items: center;
+      }
+      nav span {
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #888;
+      }
+      nav a {
+        font-size: 12px;
+        color: #999;
+        text-decoration: none;
+        background: #e0e0e0;
+        padding: 8px 20px;
+        border-radius: 12px;
+        box-shadow:
+          4px 4px 8px #b8b8b8,
+          -4px -4px 8px #fff;
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #333;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 14px;
+        color: #888;
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 14px 36px;
+        border-radius: 16px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        color: #7c5cbf;
+        background: #e0e0e0;
+        box-shadow:
+          6px 6px 12px #b8b8b8,
+          -6px -6px 12px #fff;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        box-shadow:
+          inset 4px 4px 8px #b8b8b8,
+          inset -4px -4px 8px #fff;
+      }
+      .steps {
+        display: flex;
+        gap: 16px;
+        max-width: 420px;
+        width: 100%;
+      }
+      .step {
+        flex: 1;
+        background: #e0e0e0;
+        border-radius: 16px;
+        padding: 24px 16px;
+        text-align: center;
+        box-shadow:
+          6px 6px 12px #b8b8b8,
+          -6px -6px 12px #fff;
+      }
+      .step .n {
+        font-size: 24px;
+        font-weight: 700;
+        color: #7c5cbf;
+        margin-bottom: 8px;
+      }
+      .step h3 {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+        color: #555;
+      }
+      .step p {
+        font-size: 11px;
+        color: #999;
+        line-height: 1.5;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav><span>Pixi</span><a href="#">Sign in</a></nav>
+    <div class="card">
+      <h1>Know where your images end up.</h1>
+      <p>
+        Invisible tracking and C2PA content credentials embedded into every
+        image you share.
+      </p>
+      <a href="#" class="btn">Try it free</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Upload</h3>
+        <p>Add tracking + signature</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Share</h3>
+        <p>Send it anywhere</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Track</h3>
+        <p>See every open</p>
+      </div>
+    </div>
+  </body>
+</html>
