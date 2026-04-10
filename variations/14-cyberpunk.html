@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Cyberpunk</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:'Courier New',monospace;background:#0a0a12;color:#eee;overflow-x:hidden}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;border-bottom:1px solid #1a1a2e}
+nav span{font-size:14px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#00ffff;text-shadow:0 0 10px rgba(0,255,255,.5)}
+nav a{font-size:11px;color:#ff00ff;text-decoration:none;text-shadow:0 0 8px rgba(255,0,255,.4)}
+.hero{max-width:600px;margin:0 auto;padding:80px 32px;text-align:center;position:relative}
+h1{font-size:40px;font-weight:700;text-transform:uppercase;line-height:1.2;position:relative;display:inline-block}
+h1::before,h1::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%}
+h1::before{color:#ff00ff;clip-path:inset(0 0 60% 0);transform:translate(-2px,2px)}
+h1::after{color:#00ffff;clip-path:inset(60% 0 0 0);transform:translate(2px,-2px)}
+h1 span{color:#00ffff}
+p{font-family:system-ui;font-size:14px;color:#556;line-height:1.8;margin-top:24px}
+.btn{display:inline-block;margin-top:32px;padding:14px 40px;background:transparent;border:1px solid #00ffff;color:#00ffff;text-decoration:none;font-size:12px;letter-spacing:3px;text-transform:uppercase;position:relative;overflow:hidden;transition:.3s}
+.btn:hover{background:#00ffff;color:#0a0a12;box-shadow:0 0 30px rgba(0,255,255,.4)}
+.btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,255,255,.2),transparent);transition:.5s}
+.btn:hover::before{left:100%}
+.steps{max-width:500px;margin:48px auto;padding:0 32px}
+.step{padding:16px 0;border-bottom:1px solid #1a1a2e;display:flex;gap:16px;align-items:baseline}
+.step .n{color:#ff00ff;font-weight:700;font-size:13px;text-shadow:0 0 8px rgba(255,0,255,.4)}
+.step p{font-family:system-ui;font-size:13px;color:#556;line-height:1.6}
+.step strong{color:#aaa}
+.corner{position:fixed;font-size:10px;color:#1a1a2e;letter-spacing:2px;text-transform:uppercase}
+.corner.tl{top:64px;left:32px;writing-mode:vertical-lr}
+.corner.br{bottom:32px;right:32px}
+</style></head><body>
+<div class="corner tl">SYS.ACTIVE</div>
+<div class="corner br">C2PA.VERIFIED</div>
+<nav><span>Pixi</span><a href="#">Access //</a></nav>
+<div class="hero">
+  <h1 data-text="Track every pixel">Track every <span>pixel</span></h1>
+  <p>Invisible tracking. Cryptographic proof. Every open, every share, every forward — signed with C2PA content credentials.</p>
+  <a href="#" class="btn">Initialize</a>
+</div>
+<div class="steps">
+  <div class="step"><span class="n">01</span><p><strong>Upload</strong> — embed tracking + C2PA signature</p></div>
+  <div class="step"><span class="n">02</span><p><strong>Share</strong> — deploy anywhere, undetectable</p></div>
+  <div class="step"><span class="n">03</span><p><strong>Track</strong> — monitor all access in real time</p></div>
+</div>
+</body></html>

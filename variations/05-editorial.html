@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:'Playfair Display',Georgia,serif;background:#faf7f2;color:#1a1a1a}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 48px;border-bottom:1px solid #ddd}
+nav span{font-size:13px;letter-spacing:4px;text-transform:uppercase;font-family:system-ui,sans-serif;font-weight:500}
+nav a{font-family:system-ui;font-size:12px;color:#888;text-decoration:none}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:80vh;max-width:1100px;margin:0 auto}
+.hero-text{padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
+.hero-text .label{font-family:system-ui;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;margin-bottom:24px}
+h1{font-size:48px;font-weight:400;line-height:1.25;letter-spacing:-.5px}
+h1 em{font-style:italic;color:#8b5e3c}
+.hero-text p{font-family:system-ui,sans-serif;font-size:15px;color:#777;line-height:1.8;margin-top:24px;max-width:380px}
+.btn{display:inline-block;margin-top:32px;font-family:system-ui;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;text-decoration:none;border-bottom:2px solid #1a1a1a;padding-bottom:4px;width:fit-content}
+.hero-visual{display:flex;align-items:center;justify-content:center;padding:48px}
+.card{width:280px;background:#fff;border:1px solid #e5e0d8;padding:20px}
+.card .img{height:200px;background:linear-gradient(135deg,#e8ddd0,#d4c5b2);margin-bottom:16px}
+.card .meta{font-family:system-ui;font-size:12px;color:#999;display:flex;justify-content:space-between;align-items:center}
+.card .dot{width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;margin-right:4px}
+hr{border:none;border-top:1px solid #ddd;margin:0}
+.steps{max-width:700px;margin:0 auto;padding:64px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.step .n{font-family:system-ui;font-size:11px;color:#bbb;letter-spacing:2px;margin-bottom:12px;text-transform:uppercase}
+.step h3{font-size:20px;font-weight:400;margin-bottom:8px}
+.step p{font-family:system-ui;font-size:13px;color:#888;line-height:1.7}
+</style></head><body>
+<nav><span>Pixi</span><a href="#">Sign in</a></nav>
+<div class="hero">
+  <div class="hero-text">
+    <div class="label">Image Intelligence</div>
+    <h1>Your images tell <em>stories</em> you&rsquo;ve never heard.</h1>
+    <p>Pixi embeds invisible tracking and C2PA content credentials into every image. See who opens, shares, and reposts your work.</p>
+    <a href="#" class="btn">Begin tracking</a>
+  </div>
+  <div class="hero-visual">
+    <div class="card">
+      <div class="img"></div>
+      <div class="meta"><span><span class="dot"></span>12 views</span><span>3 forwards</span></div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="steps">
+  <div class="step"><div class="n">Step I</div><h3>Upload</h3><p>Drop any image. We add invisible tracking and sign it cryptographically.</p></div>
+  <div class="step"><div class="n">Step II</div><h3>Share</h3><p>Send it anywhere. It looks and works exactly like the original.</p></div>
+  <div class="step"><div class="n">Step III</div><h3>Track</h3><p>See every open and forward in real time. Provenance is verifiable.</p></div>
+</div>
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Zen</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:system-ui,sans-serif;background:#fcfcfa;color:#555;display:flex}
+.vert{writing-mode:vertical-rl;padding:32px 16px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ddd;position:fixed;right:24px;top:0;bottom:0;display:flex;align-items:center}
+main{max-width:480px;margin:0 auto;padding:140px 32px 80px;flex:1}
+nav{position:fixed;top:0;left:0;right:0;padding:24px 32px;display:flex;justify-content:space-between;z-index:1}
+nav span{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#bbb;font-weight:300}
+nav a{font-size:11px;color:#ccc;text-decoration:none}
+h1{font-size:28px;font-weight:300;line-height:1.7;color:#333;letter-spacing:.5px}
+.line{width:32px;height:1px;background:#ddd;margin:40px 0}
+p{font-size:14px;line-height:2;color:#999;font-weight:300}
+.btn{display:inline-block;margin-top:40px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#333;text-decoration:none;border-bottom:1px solid #ccc;padding-bottom:4px}
+.steps{margin-top:80px}
+.step{margin-bottom:32px}
+.step .n{font-size:10px;color:#ddd;letter-spacing:2px;margin-bottom:8px}
+.step p{font-size:13px;color:#aaa;line-height:1.8;font-weight:300}
+</style></head><body>
+<div class="vert">image tracking &amp; content credentials</div>
+<nav><span>Pixi</span><a href="#">Enter</a></nav>
+<main>
+  <h1>Know where your images end up.</h1>
+  <div class="line"></div>
+  <p>Invisible tracking and cryptographic signatures, embedded into every image you share. See who opens, shares, and reposts your work.</p>
+  <a href="#" class="btn">Begin</a>
+  <div class="steps">
+    <div class="step"><div class="n">one</div><p>Upload any image. We embed tracking and sign it with C2PA credentials.</p></div>
+    <div class="step"><div class="n">two</div><p>Share it. It looks and works exactly like the original.</p></div>
+    <div class="step"><div class="n">three</div><p>See every open, every forward, in real time.</p></div>
+  </div>
+</main>
+</body></html>

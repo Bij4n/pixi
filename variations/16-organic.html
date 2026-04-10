@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Organic</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:'DM Sans',sans-serif;background:#FFF8F0;color:#3d3028;overflow-x:hidden;position:relative}
+.blob{position:fixed;border-radius:30% 70% 70% 30%/30% 30% 70% 70%;opacity:.12;z-index:0}
+.blob:nth-child(1){width:500px;height:500px;background:#C4704B;top:-100px;right:-100px;animation:morph 12s ease-in-out infinite}
+.blob:nth-child(2){width:400px;height:400px;background:#87A878;bottom:-80px;left:-80px;animation:morph 10s ease-in-out infinite reverse}
+@keyframes morph{0%,100%{border-radius:30% 70% 70% 30%/30% 30% 70% 70%}50%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}}
+.content{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:80px 24px;text-align:center}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:520px;margin:0 auto;padding:24px;position:relative;z-index:1}
+nav span{font-weight:700;color:#C4704B}
+nav a{font-size:13px;color:#b0a090;text-decoration:none}
+h1{font-size:36px;font-weight:700;line-height:1.35;color:#3d3028}
+h1 span{color:#C4704B}
+p{font-size:15px;color:#9a8a7a;line-height:1.8;margin-top:20px}
+.btn{display:inline-block;margin-top:28px;background:#C4704B;color:#fff;padding:14px 36px;border-radius:99px;text-decoration:none;font-weight:600;font-size:14px;transition:.2s}
+.btn:hover{background:#a85a3a;transform:translateY(-1px)}
+.steps{margin-top:64px;display:grid;gap:20px}
+.step{background:rgba(255,255,255,.6);border-radius:20px;padding:24px;text-align:left;display:flex;gap:16px;align-items:flex-start;backdrop-filter:blur(4px)}
+.step .dot{width:8px;height:8px;border-radius:50%;background:#87A878;margin-top:6px;flex-shrink:0}
+.step h3{font-size:14px;font-weight:700;margin-bottom:4px}
+.step p{font-size:13px;color:#9a8a7a;line-height:1.6;margin:0}
+</style></head><body>
+<div class="blob"></div><div class="blob"></div>
+<nav><span>pixi</span><a href="#">Sign in</a></nav>
+<div class="content">
+  <h1>Know where your <span>images</span> end up.</h1>
+  <p>Invisible tracking and C2PA content credentials embedded into every image you share. See who opens, shares, and reposts your work.</p>
+  <a href="#" class="btn">Try it free</a>
+  <div class="steps">
+    <div class="step"><div class="dot"></div><div><h3>Upload</h3><p>Drop any image. We add invisible tracking and sign it.</p></div></div>
+    <div class="step"><div class="dot"></div><div><h3>Share</h3><p>Send it anywhere. Looks identical to the original.</p></div></div>
+    <div class="step"><div class="dot"></div><div><h3>Track</h3><p>See every open and forward in real time.</p></div></div>
+  </div>
+</div>
+</body></html>

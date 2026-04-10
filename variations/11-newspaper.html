@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Newspaper</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:'Libre Baskerville',Georgia,serif;background:#f5f0e8;color:#2a2a2a;padding:32px}
+.paper{max-width:800px;margin:0 auto;border-top:4px double #000;border-bottom:1px solid #000}
+.masthead{text-align:center;padding:24px 0;border-bottom:2px solid #000}
+.masthead h1{font-size:52px;font-weight:700;letter-spacing:4px;text-transform:uppercase;line-height:1}
+.masthead .sub{font-size:11px;font-style:italic;color:#888;margin-top:8px}
+.dateline{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #ccc;font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#999}
+.headline{padding:32px 0 24px;text-align:center;border-bottom:1px solid #ddd}
+.headline h2{font-size:32px;font-weight:700;line-height:1.3;max-width:600px;margin:0 auto}
+.headline .deck{font-size:15px;font-style:italic;color:#777;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+.cols{column-count:2;column-gap:32px;column-rule:1px solid #ddd;padding:24px 0;font-size:14px;line-height:1.9;color:#444;text-align:justify}
+.cols .drop{font-size:48px;float:left;line-height:1;padding-right:8px;font-weight:700;color:#000}
+.how{padding:24px 0;border-top:2px solid #000}
+.how h3{font-size:13px;text-transform:uppercase;letter-spacing:3px;margin-bottom:16px;text-align:center}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-size:13px}
+.how-grid .step{text-align:center}
+.how-grid .n{font-weight:700;margin-bottom:4px}
+.how-grid p{color:#777;line-height:1.6}
+.cta{text-align:center;padding:24px 0;border-top:1px solid #ddd}
+.cta a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#2a2a2a;text-decoration:none;border:2px solid #2a2a2a;padding:12px 32px;display:inline-block}
+.cta a:hover{background:#2a2a2a;color:#f5f0e8}
+</style></head><body>
+<div class="paper">
+<div class="masthead"><h1>Pixi</h1><div class="sub">Image Intelligence &amp; Content Credentials</div></div>
+<div class="dateline"><span>Vol. I &mdash; No. 1</span><span>Free Edition</span></div>
+<div class="headline">
+  <h2>Images Now Tell Their Owners Where They&rsquo;ve Been</h2>
+  <div class="deck">New service embeds invisible tracking and cryptographic signatures into any photograph</div>
+</div>
+<div class="cols">
+  <span class="drop">P</span>ixi, a new image tracking service, allows photographers, designers, and businesses to know exactly who opens and shares their images. The service embeds an invisible tracking pixel into any uploaded image and signs it using the C2PA content credential standard &mdash; the same technology trusted by Adobe, the BBC, and the New York Times. Every open, forward, and share is logged in real time, giving image owners unprecedented visibility into how their work travels across the internet. The service is free to start and requires no credit card.
+</div>
+<div class="how">
+  <h3>How It Works</h3>
+  <div class="how-grid">
+    <div class="step"><div class="n">I. Upload</div><p>Any image. Tracking and C2PA signature added invisibly.</p></div>
+    <div class="step"><div class="n">II. Share</div><p>Send anywhere. The image looks and works as normal.</p></div>
+    <div class="step"><div class="n">III. Track</div><p>See every open and forward. Provenance is verifiable.</p></div>
+  </div>
+</div>
+<div class="cta"><a href="#">Subscribe Free</a></div>
+</div>
+</body></html>

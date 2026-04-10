@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Glassmorphism</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:system-ui,sans-serif;background:#1a0533;overflow-x:hidden;color:#fff}
+.bg{position:fixed;inset:0;z-index:0}
+.bg .blob{position:absolute;border-radius:50%;filter:blur(80px);animation:drift 8s ease-in-out infinite alternate}
+.blob:nth-child(1){width:500px;height:500px;background:#7c3aed;top:-10%;left:-10%}
+.blob:nth-child(2){width:400px;height:400px;background:#ec4899;bottom:-10%;right:-10%;animation-delay:-3s}
+.blob:nth-child(3){width:300px;height:300px;background:#06b6d4;top:40%;left:50%;animation-delay:-5s}
+@keyframes drift{to{transform:translate(60px,-40px) scale(1.1)}}
+.content{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:80px 24px;text-align:center}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:48px 32px;margin-bottom:32px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;position:fixed;top:0;left:0;right:0;z-index:10}
+nav a{color:rgba(255,255,255,.7);text-decoration:none;font-size:13px}
+nav span{font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:32px;font-weight:600;line-height:1.3;margin-bottom:16px}
+p{color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:24px}
+.btn{display:inline-block;background:#fff;color:#1a0533;padding:12px 32px;border-radius:99px;text-decoration:none;font-weight:600;font-size:14px;transition:.2s}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(255,255,255,.2)}
+.steps{text-align:left}
+.steps h3{font-size:14px;font-weight:600;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5)}
+.step{display:flex;gap:16px;margin-bottom:16px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.step span{color:#c084fc;font-weight:700;font-size:13px}
+</style></head><body>
+<div class="bg"><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+<nav><span>Pixi</span><a href="#">Sign in</a></nav>
+<div class="content">
+  <div class="glass">
+    <h1>Know where your images end up.</h1>
+    <p>Invisible tracking. Cryptographic proof. Every open, every share — signed with C2PA credentials.</p>
+    <a href="#" class="btn">Try it free</a>
+  </div>
+  <div class="glass steps">
+    <h3>How it works</h3>
+    <div class="step"><span>01</span><span>Upload any image. We embed a tracking pixel and sign it.</span></div>
+    <div class="step"><span>02</span><span>Share it anywhere — email, social, docs.</span></div>
+    <div class="step"><span>03</span><span>See every open and forward in real time.</span></div>
+  </div>
+</div>
+</body></html>

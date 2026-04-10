@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Polaroid</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:system-ui,sans-serif;background:#e8e0d4;color:#3a3530}
+nav{padding:24px 32px;display:flex;justify-content:space-between;align-items:center}
+nav span{font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:#5a4a3a}
+nav a{font-size:12px;color:#999;text-decoration:none}
+.board{max-width:700px;margin:40px auto;padding:0 32px;display:flex;gap:32px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.polaroid{background:#fff;padding:16px 16px 48px;box-shadow:2px 4px 16px rgba(0,0,0,.1);position:relative}
+.polaroid:nth-child(1){transform:rotate(-3deg)}
+.polaroid:nth-child(2){transform:rotate(2deg);margin-top:40px}
+.polaroid .photo{width:200px;height:180px;background:linear-gradient(135deg,#c4a882,#8fa);display:flex;align-items:flex-end;padding:12px}
+.polaroid .photo .badge{background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:4px 10px;border-radius:4px}
+.polaroid .caption{position:absolute;bottom:12px;left:16px;right:16px;font-family:'Caveat',cursive;font-size:16px;color:#888}
+.polaroid.data .photo{background:#f5f0e8;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:20px;gap:12px}
+.polaroid.data .stat{font-size:13px;color:#666}
+.polaroid.data .stat strong{color:#333;font-size:20px;margin-right:4px}
+.polaroid.data .verified{color:#4ade80;font-size:12px}
+.text{max-width:500px;margin:48px auto;padding:0 32px;text-align:center}
+h1{font-family:'Caveat',cursive;font-size:42px;font-weight:700;line-height:1.3;color:#3a3530}
+p{font-size:14px;color:#999;line-height:1.8;margin-top:16px}
+.btn{display:inline-block;margin-top:24px;background:#5a4a3a;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600}
+.btn:hover{background:#3a3530}
+.how{max-width:500px;margin:48px auto;padding:0 32px}
+.how h3{font-family:'Caveat',cursive;font-size:24px;margin-bottom:16px;text-align:center;color:#888}
+.step{margin-bottom:12px;padding:16px;background:#fff;box-shadow:1px 2px 8px rgba(0,0,0,.06);display:flex;gap:12px;align-items:baseline;transform:rotate(-.3deg)}
+.step:nth-child(odd){transform:rotate(.3deg)}
+.step .n{font-family:'Caveat',cursive;font-size:20px;font-weight:700;color:#c4a882}
+.step p{font-size:13px;color:#888;line-height:1.5}
+</style></head><body>
+<nav><span>pixi</span><a href="#">sign in</a></nav>
+<div class="board">
+  <div class="polaroid"><div class="photo"><span class="badge">12 views</span></div><div class="caption">product-hero.png</div></div>
+  <div class="polaroid data"><div class="photo"><div class="stat"><strong>12</strong> views</div><div class="stat"><strong>3</strong> forwards</div><div class="verified">✓ C2PA verified</div></div><div class="caption">tracking data</div></div>
+</div>
+<div class="text">
+  <h1>Know where your images end up</h1>
+  <p>Pixi embeds invisible tracking and C2PA content credentials into every image. See who opens, shares, and reposts your work.</p>
+  <a href="#" class="btn">Try it free</a>
+</div>
+<div class="how">
+  <h3>How it works</h3>
+  <div class="step"><span class="n">1.</span><p>Upload any image. We add invisible tracking + C2PA signature.</p></div>
+  <div class="step"><span class="n">2.</span><p>Share it anywhere. Looks identical to the original.</p></div>
+  <div class="step"><span class="n">3.</span><p>See every open and forward in real time.</p></div>
+</div>
+</body></html>

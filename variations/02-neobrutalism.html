@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixi — Neobrutalism</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:'Courier New',monospace;background:#FFE500;color:#000}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:3px solid #000}
+nav span{font-weight:900;font-size:18px;text-transform:uppercase}
+nav a{background:#000;color:#FFE500;padding:8px 20px;text-decoration:none;font-weight:700;font-size:13px;border:3px solid #000}
+nav a:hover{background:#FF6B9D;color:#000}
+.hero{padding:60px 24px;max-width:700px;margin:0 auto}
+h1{font-size:52px;font-weight:900;line-height:1.1;text-transform:uppercase;margin-bottom:24px}
+h1 em{font-style:normal;background:#FF6B9D;padding:0 8px;display:inline}
+p{font-size:16px;line-height:1.7;margin-bottom:32px;max-width:500px}
+.btn{display:inline-block;background:#000;color:#FFE500;padding:16px 40px;text-decoration:none;font-weight:900;font-size:16px;text-transform:uppercase;border:3px solid #000;box-shadow:6px 6px 0 #000;transition:.1s}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 #000}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:3px solid #000;margin-top:60px}
+.card{padding:32px 24px;border-right:3px solid #000;border-bottom:3px solid #000}
+.card:nth-child(1){background:#90F5A0}
+.card:nth-child(2){background:#87CEEB}
+.card:nth-child(3){background:#FF6B9D}
+.card .num{font-size:36px;font-weight:900;margin-bottom:8px}
+.card h3{font-size:14px;font-weight:900;text-transform:uppercase;margin-bottom:8px}
+.card p{font-size:13px;line-height:1.5;margin:0}
+</style></head><body>
+<nav><span>PIXI</span><a href="#">Sign in →</a></nav>
+<div class="hero">
+  <h1>Your images travel.<br><em>You never know.</em><br>Until now.</h1>
+  <p>Pixi embeds invisible tracking into any image and signs it with C2PA content credentials. See who opens, shares, and reposts your work.</p>
+  <a href="#" class="btn">Start tracking →</a>
+</div>
+<div class="cards">
+  <div class="card"><div class="num">01</div><h3>Upload</h3><p>Drop any image. We add invisible tracking + C2PA signature.</p></div>
+  <div class="card"><div class="num">02</div><h3>Share</h3><p>Send it anywhere. Looks identical to the original.</p></div>
+  <div class="card"><div class="num">03</div><h3>Track</h3><p>Every open, every forward. Cryptographically verifiable.</p></div>
+</div>
+</body></html>
