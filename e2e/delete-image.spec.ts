@@ -23,10 +23,9 @@ test("user can delete an image from the detail page", async ({ page }) => {
 
   await expect(page.getByText(/total views/i)).toBeVisible();
 
-  // Accept the confirm dialog
-  page.on("dialog", (d) => d.accept());
-
-  await page.getByRole("button", { name: /delete image/i }).click();
+  // Click Delete, then confirm Yes
+  await page.getByRole("button", { name: /^delete image$/i }).click();
+  await page.getByRole("button", { name: /^yes$/i }).click();
 
   // Back on empty dashboard
   await expect(
