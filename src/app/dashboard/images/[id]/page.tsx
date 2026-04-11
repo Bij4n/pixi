@@ -4,6 +4,7 @@ import { db } from "@/db/client";
 import { images, events } from "@/db/schema";
 import { and, eq, desc, sql } from "drizzle-orm";
 import { redirect, notFound } from "next/navigation";
+import { DeleteButton } from "./delete-button";
 
 export default async function ImageDetailPage({
   params,
@@ -103,6 +104,7 @@ export default async function ImageDetailPage({
           >
             Verify provenance →
           </Link>
+          <DeleteButton imageId={image.id} />
         </div>
       </div>
 
