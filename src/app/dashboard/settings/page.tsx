@@ -1,5 +1,6 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { ChangePasswordForm } from "./change-password-form";
 
 export default async function SettingsPage() {
   const session = await auth();
@@ -8,16 +9,25 @@ export default async function SettingsPage() {
   return (
     <div>
       <h1 className="text-2xl font-medium tracking-tight">Settings</h1>
-      <div className="mt-8 max-w-md space-y-8">
-        <div>
+
+      <div className="mt-8 max-w-md space-y-10">
+        <section>
           <p className="text-xs font-medium text-muted">Email</p>
           <p className="mt-1 text-sm">{session.user.email}</p>
-        </div>
-        <div>
+        </section>
+
+        <section>
           <p className="text-xs font-medium text-muted">Plan</p>
           <p className="mt-1 text-sm">Free</p>
           <p className="mt-3 text-xs text-muted">Paid plans are coming soon.</p>
-        </div>
+        </section>
+
+        <section>
+          <p className="text-xs font-medium text-muted">Change password</p>
+          <div className="mt-3">
+            <ChangePasswordForm />
+          </div>
+        </section>
       </div>
     </div>
   );
