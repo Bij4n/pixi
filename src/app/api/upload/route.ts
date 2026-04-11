@@ -6,6 +6,7 @@ import { images } from "@/db/schema";
 import { saveImage } from "@/lib/storage";
 import { generateSlug } from "@/lib/tracking";
 import { signImageBuffer } from "@/lib/c2pa";
+import { rateLimit } from "@/lib/rate-limit";
 
 const MAX_SIZE = 10 * 1024 * 1024; // 10 MB
 const ALLOWED_TYPES = new Set([
@@ -23,6 +24,18 @@ export async function POST(req: Request) {
   const userId = (session.user as { id?: string }).id;
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // Rate limit: 10 uploads per user per minute (token bucket)
+  const limit = rateLimit(`upload:${userId}`, {
+    capacity: 10,
+    refillRate: 10 / 60,
+  });
+  if (!limit.allowed) {
+    return NextResponse.json(
+      { error: "Too many uploads. Try again in a moment." },
+      { status: 429 },
+    );
   }
 
   let form: FormData;

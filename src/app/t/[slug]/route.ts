@@ -4,6 +4,7 @@ import { db } from "@/db/client";
 import { images } from "@/db/schema";
 import { readImage } from "@/lib/storage";
 import { recordEvent, getClientIp } from "@/lib/tracking";
+import { rateLimit } from "@/lib/rate-limit";
 
 // 1x1 transparent GIF bytes for ?pixel=1 mode
 const PIXEL_GIF = Buffer.from(
@@ -16,6 +17,15 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> },
 ) {
   const { slug } = await params;
+  const ip = getClientIp(req) ?? "unknown";
+
+  // Rate limit: 60 hits per IP per minute. Protects against abusive
+  // scrapers inflating view counts. Exceeds return the pixel silently
+  // without logging an event.
+  const limit = rateLimit(`track:${ip}:${slug}`, {
+    capacity: 60,
+    refillRate: 1,
+  });
 
   const image = db.select().from(images).where(eq(images.slug, slug)).get();
 
@@ -23,13 +33,15 @@ export async function GET(
     return new NextResponse("Not found", { status: 404 });
   }
 
-  // Log the event
-  recordEvent({
-    imageId: image.id,
-    ip: getClientIp(req),
-    userAgent: req.headers.get("user-agent"),
-    referer: req.headers.get("referer"),
-  });
+  // Only log the event if within rate limit
+  if (limit.allowed) {
+    recordEvent({
+      imageId: image.id,
+      ip,
+      userAgent: req.headers.get("user-agent"),
+      referer: req.headers.get("referer"),
+    });
+  }
 
   const url = new URL(req.url);
   const pixelMode = url.searchParams.get("pixel") === "1";
