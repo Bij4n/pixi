@@ -67,9 +67,12 @@ export default async function DashboardHome() {
             className="flex items-center justify-between py-4 transition hover:bg-surface"
           >
             <div className="flex items-center gap-4">
-              <div className="flex size-10 items-center justify-center rounded-md bg-surface text-xs text-muted">
-                IMG
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/api/images/${row.id}/raw`}
+                alt={row.filename}
+                className="size-12 rounded-md border border-border object-cover bg-surface"
+              />
               <div>
                 <p className="text-sm font-medium">{row.filename}</p>
                 <p className="text-xs text-muted">
