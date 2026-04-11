@@ -5,6 +5,7 @@ import { images, events } from "@/db/schema";
 import { and, eq, desc, sql } from "drizzle-orm";
 import { redirect, notFound } from "next/navigation";
 import { DeleteButton } from "./delete-button";
+import { detectForwards, countForwards } from "@/lib/forward-detection";
 
 export default async function ImageDetailPage({
   params,
@@ -31,19 +32,16 @@ export default async function ImageDetailPage({
     .where(eq(events.imageId, id))
     .get();
 
-  const uniqueIps = db
-    .select({ count: sql<number>`count(distinct ${events.ip})` })
-    .from(events)
-    .where(eq(events.imageId, id))
-    .get();
-
-  const recentEvents = db
+  const allEvents = db
     .select()
     .from(events)
     .where(eq(events.imageId, id))
     .orderBy(desc(events.createdAt))
-    .limit(20)
     .all();
+
+  const recentEvents = allEvents.slice(0, 20);
+  const recipients = detectForwards(allEvents);
+  const forwardCount = countForwards(recipients);
 
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3100";
   const trackedUrl = `${baseUrl}/t/${image.slug}`;
@@ -68,6 +66,15 @@ export default async function ImageDetailPage({
         )}
       </div>
 
+      <div className="mt-6 overflow-hidden rounded-xl border border-border bg-surface">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/api/images/${image.id}/raw`}
+          alt={image.filename}
+          className="max-h-96 w-full object-contain"
+        />
+      </div>
+
       <div className="mt-8 grid gap-8 md:grid-cols-3">
         <div className="rounded-lg border border-border p-5">
           <p className="text-xs font-medium text-muted">Total views</p>
@@ -76,12 +83,19 @@ export default async function ImageDetailPage({
           </p>
         </div>
         <div className="rounded-lg border border-border p-5">
-          <p className="text-xs font-medium text-muted">Unique viewers</p>
-          <p className="mt-2 text-3xl font-semibold">{uniqueIps?.count ?? 0}</p>
+          <p className="text-xs font-medium text-muted">Recipients</p>
+          <p className="mt-2 text-3xl font-semibold">{recipients.length}</p>
         </div>
         <div className="rounded-lg border border-border p-5">
-          <p className="text-xs font-medium text-muted">Uploaded</p>
-          <p className="mt-2 text-sm">{image.createdAt.toLocaleDateString()}</p>
+          <p className="text-xs font-medium text-muted">Forwards detected</p>
+          <p className="mt-2 text-3xl font-semibold">
+            {forwardCount}
+            {forwardCount > 0 && (
+              <span className="ml-2 align-middle text-xs font-medium text-amber-500">
+                ⚠
+              </span>
+            )}
+          </p>
         </div>
       </div>
 
@@ -107,6 +121,43 @@ export default async function ImageDetailPage({
           <DeleteButton imageId={image.id} />
         </div>
       </div>
+
+      {recipients.length > 0 && (
+        <div className="mt-12">
+          <h2 className="text-sm font-medium">Recipients</h2>
+          <p className="mt-1 text-xs text-muted">
+            {forwardCount === 0
+              ? "Seen by the original recipient only."
+              : `Detected ${forwardCount} forward${forwardCount === 1 ? "" : "s"} beyond the original recipient.`}
+          </p>
+          <div className="mt-4 divide-y divide-border border-t border-b border-border">
+            {recipients.map((r) => (
+              <div
+                key={r.ip}
+                className="flex items-center justify-between py-3 text-xs"
+              >
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`inline-flex size-2 rounded-full ${
+                      r.isOriginal ? "bg-emerald-500" : "bg-amber-500"
+                    }`}
+                  />
+                  <div>
+                    <p className="font-medium">{r.ip}</p>
+                    <p className="mt-0.5 text-muted">
+                      {r.isOriginal ? "Original recipient" : "Forward"} ·{" "}
+                      {r.opens} open{r.opens === 1 ? "" : "s"}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-muted">
+                  First seen {r.firstSeen.toLocaleString()}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="mt-12">
         <h2 className="text-sm font-medium">Recent views</h2>
