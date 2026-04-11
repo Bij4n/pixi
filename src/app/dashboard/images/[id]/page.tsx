@@ -118,6 +118,12 @@ export default async function ImageDetailPage({
           >
             Verify provenance →
           </Link>
+          <a
+            href={`/api/images/${image.id}/events.csv`}
+            className="text-muted transition hover:text-foreground"
+          >
+            Export CSV →
+          </a>
           <DeleteButton imageId={image.id} />
         </div>
       </div>
