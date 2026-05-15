@@ -1,8 +1,9 @@
 # Pixi
 
-Image tracking with cryptographic content credentials. Upload any image, get
-back a tracked version, and watch who opens it, shares it, and forwards it —
-all signed so provenance is verifiable.
+Pixi embeds an invisible tracking pixel into any image you share and signs it
+with a cryptographic content credential, so you can see who opened it, catch
+when it gets forwarded, and prove it hasn't been altered — long after it left
+your hands. Because sending something shouldn't mean going blind.
 
 ## What it does
 

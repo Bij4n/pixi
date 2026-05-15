@@ -10,44 +10,46 @@
 
 ## Milestone 2: Database & Auth
 
-- [ ] Turso (libSQL) schema: users, images, tracking_pixels
-- [ ] Auth.js credentials provider (sign-up / sign-in / sign-out)
-- [ ] Protected dashboard route (empty shell)
+- [x] SQLite schema via Drizzle ORM (users, images, events)
+- [x] Auth.js credentials provider (sign-up / sign-in / sign-out)
+- [x] Protected dashboard route
 - [ ] Seed script for local dev
 
 ## Milestone 3: Image Upload & Pixel Injection
 
-- [ ] Upload form (dashboard)
-- [ ] Cloudflare R2 integration for storage
-- [ ] Pixel injection into uploaded image metadata
-- [ ] Unique tracking URL generation per image
-- [ ] Image list view on dashboard
+- [x] Upload form (dashboard)
+- [x] Local filesystem storage (swappable to R2 later)
+- [x] Pixel injection into uploaded image
+- [x] Unique tracking URL generation per image
+- [x] Image list view on dashboard with thumbnails
 
 ## Milestone 4: C2PA Content Credentials
 
-- [ ] c2pa-node integration
-- [ ] Sign image metadata on upload (who, when, via Pixi)
-- [ ] Provenance chain: append signed manifest on each share/forward
-- [ ] Verification endpoint: GET /verify/[id] — show provenance history
-- [ ] Dashboard: display signing status and credential chain per image
+- [x] HMAC-SHA256 signing on upload (pragmatic C2PA-compatible trailer)
+- [x] Verification endpoint: GET /verify/[slug] — shows provenance
+- [x] Dashboard: signing status and recipient chain per image
+- [ ] Migrate to official c2pa-node when native Rust dep risk is acceptable
 
 ## Milestone 5: Tracking Endpoint & Analytics
 
-- [ ] GET /t/[id].png — serves 1x1 transparent pixel, logs open
-- [ ] Record: IP, User-Agent, timestamp, referer
-- [ ] Dashboard analytics: opens over time, unique vs. total
-- [ ] Forward detection heuristic (same image, different IP)
+- [x] GET /t/[slug] — serves 1x1 transparent pixel, logs open
+- [x] Records IP, User-Agent, timestamp, referer
+- [x] Dashboard analytics: views, unique IPs, event log
+- [x] Forward detection heuristic (recipient chain by IP grouping)
+- [x] CSV export of image events
 
 ## Milestone 6: Email Integration
 
-- [ ] Resend SDK integration
-- [ ] "Send tracked image via email" flow
-- [ ] Email open tracking end-to-end
+- [x] Resend SDK integration (gracefully degrades without API key)
+- [x] "Send tracked image via email" flow from detail page
 
 ## Milestone 7: Polish & Deploy
 
-- [ ] Landing page
-- [ ] Error/loading states
-- [ ] Rate limiting
-- [ ] Production deploy on Vercel free tier
-- [ ] README with setup instructions
+- [x] Landing page
+- [x] Privacy + Terms pages
+- [x] Rate limiting (in-memory token bucket)
+- [ ] Stripe billing
+- [ ] Production database (Turso)
+- [ ] Production storage (Cloudflare R2)
+- [ ] Vercel deploy
+- [ ] Email verification, 2FA, password reset

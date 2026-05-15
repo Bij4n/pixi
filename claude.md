@@ -1,17 +1,16 @@
 # Pixi
 
-Pixel-tracking SaaS. Upload an image, get back a tracked version,
-monitor opens/forwards from a dashboard.
+Pixel-tracking SaaS. Upload an image, get back a tracked version signed with
+a cryptographic content credential, and monitor opens/forwards from a dashboard.
 
 ## Stack
 
-- Next.js (App Router), TypeScript
-- Turso (libSQL) for database
-- Cloudflare R2 for image storage
+- Next.js 16 (App Router), TypeScript, Tailwind CSS 4
+- SQLite via Drizzle ORM (local `pixi.db`, swappable to Turso)
+- Local filesystem storage at `./storage/images/` (swappable to R2)
+- Auth.js v5 credentials provider + bcryptjs
 - Resend for email
-- Lucia or Auth.js (credentials) for auth
 - Vitest + Playwright for tests
-- Hosted on Vercel free tier
 
 Any dependency that isn't free-tier friendly must be flagged before adding.
 
